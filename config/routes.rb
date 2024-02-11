@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :products
+
+  resources :users do
+    resources :orders do
+      resources :order_line_items
+    end
+  end
+
+
   resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
